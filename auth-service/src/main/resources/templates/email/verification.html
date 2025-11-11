@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8" />
+    <title>Account Verification</title>
+</head>
+<body style="font-family: Arial, sans-serif; background-color: #f7f9fb; padding: 20px;">
+<div style="max-width: 500px; margin: 0 auto; background-color: #ffffff; border-radius: 8px; box-shadow: 0 0 8px rgba(0,0,0,0.1); padding: 20px;">
+    <img src="cid:companyLogo" alt="Company Logo"
+         style="width: 120px; display: block; margin: 0 auto 20px;">
+    <h2 style="color: #333; text-align: center;">Welcome, <span th:text="${username}">User</span>!</h2>
+    <p style="font-size: 16px; text-align: center;">Please use the code below to verify your account:</p>
+    <div style="text-align: center; margin-top: 20px;">
+        <p style="font-size: 24px; font-weight: bold; color: #007bff;" th:text="${verificationCode}">123456</p>
+    </div>
+    <p style="font-size: 14px; text-align: center; color: #666; margin-top: 30px;">
+        This code will expire in <b>15 minutes</b>. Do not share it with anyone.
+    </p>
+</div>
+</body>
+</html>
