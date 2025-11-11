@@ -68,6 +68,9 @@ public class AuthenticationService {
                 throw new RuntimeException("Verification code has expired");
             }
             if (user.getVerificationCode().equals(input.getVerificationCode())) {
+                user.setIsEmailVerified(true);
+                user.setVerificationExpiration(LocalDateTime.now().plusMinutes(15));
+                user.setStatus(User.Status.ACTIVE);
                 user.setEnabled(true);
                 user.setVerificationCode(null);
                 user.setVerificationExpiration(null);
